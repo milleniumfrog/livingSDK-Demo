@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const md5 = require('blueimp-md5');
 
-let lsdk = new livingSDK('https://my.living-apps.de', 'your username', 'your password');
+let lsdk = new livingSDK('https://my.living-apps.de', 'rene.schwarzinger@milleniumfrog.de', '5MdaB37p06ZK');
 
 
 let oldres = undefined;
@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
 
     socket.on('update', (name, anwesenheit) => {
 
-        lsdk.get('your appid').then((res) => {
+        lsdk.get('59bb99ed4111f9f855edc24c').then((res) => {
 
             let globals = res.globals;
             let datasources = res.datasources;
@@ -87,7 +87,7 @@ http.listen(3000, function () {
 // return data promise to client
 function dataPromise () {
     return new Promise((resolve, reject) => {
-        lsdk.get('your appid').then((res) => {
+        lsdk.get('59bb99ed4111f9f855edc24c').then((res) => {
 
             let globals = res.globals;
             let datasources = res.datasources;
