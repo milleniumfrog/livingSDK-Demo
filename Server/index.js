@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const md5 = require('blueimp-md5');
 
-let lsdk = new livingSDK('https://my.living-apps.de', 'rene.schwarzinger@milleniumfrog.de', '5MdaB37p06ZK');
+let lsdk = new livingSDK('https://my.living-apps.de', 'your username', 'your password');
 
 
 let oldres = undefined;
